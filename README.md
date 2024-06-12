@@ -1,2 +1,2 @@
-# grpc-spring-boot-gradle-example
+# grpc-spring-boot-example
 Let's change the world!

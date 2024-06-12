@@ -8,6 +8,7 @@
  * This project uses @Incubating APIs which are subject to change.
  */
 
-rootProject.name = 'grpc-spring-boot-gradle-example'
+rootProject.name = 'grpc-spring-boot-example'
 include 'proto'
 include 'grpc-server'
+include 'grpc-client'

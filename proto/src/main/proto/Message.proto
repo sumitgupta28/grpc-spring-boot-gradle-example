@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package beksultan.grpc;
+package test.grpc;
 
 option java_multiple_files = true;
 // add other options
@@ -14,7 +14,21 @@ message GiveMeTrueResponse {
   bool true = 1;
 }
 
+
+message MathsInput {
+  string sign = 1;
+  int32 firstNumber = 2;
+  int32 secondNumber = 3;
+}
+
+message MathsOutput {
+  string result = 1;
+}
+
+
 service MessageService {
   rpc send(Message) returns (Message) {}
   rpc giveMeTrue (GiveMeTrueRequest) returns (GiveMeTrueResponse) {}
+  rpc giveMeResult (MathsInput) returns (MathsOutput) {}
+
 }

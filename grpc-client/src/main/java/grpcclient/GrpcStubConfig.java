@@ -1,6 +1,6 @@
 package grpcclient;
 
-import beksultan.grpc.MessageServiceGrpc;
+import test.grpc.MessageServiceGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import org.springframework.context.annotation.Bean;

@@ -1,9 +1,9 @@
 package grpcclient;
 
-import beksultan.grpc.GiveMeTrueRequest;
-import beksultan.grpc.GiveMeTrueResponse;
-import beksultan.grpc.Message;
-import beksultan.grpc.MessageServiceGrpc;
+import test.grpc.GiveMeTrueRequest;
+import test.grpc.GiveMeTrueResponse;
+import test.grpc.Message;
+import test.grpc.MessageServiceGrpc;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
