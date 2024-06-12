@@ -1,5 +1,7 @@
 package grpcclient;
 
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import test.grpc.GiveMeTrueRequest;
 import test.grpc.GiveMeTrueResponse;
 import test.grpc.Message;
@@ -14,6 +16,15 @@ public class MessageController {
 
     public MessageController(MessageServiceGrpc.MessageServiceBlockingStub messageStub) {
         this.messageStub = messageStub;
+    }
+
+    @PostMapping("/give-me-result")
+    String giveMeResult(@RequestBody MathsInput mathsInput){
+        return messageStub.giveMeResult(test.grpc.MathsInput.newBuilder()
+                        .setFirstNumber(Integer.valueOf(mathsInput.getFirstNumber()))
+                        .setSecondNumber(Integer.valueOf(mathsInput.getSecondNumber()))
+                        .setSign(mathsInput.getMathsSign())
+                .build()).getResult();
     }
 
     @GetMapping("/greetings")
