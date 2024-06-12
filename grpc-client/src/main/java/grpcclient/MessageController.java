@@ -21,8 +21,8 @@ public class MessageController {
     @PostMapping("/give-me-result")
     String giveMeResult(@RequestBody MathsInput mathsInput){
         return messageStub.giveMeResult(test.grpc.MathsInput.newBuilder()
-                        .setFirstNumber(Integer.valueOf(mathsInput.getFirstNumber()))
-                        .setSecondNumber(Integer.valueOf(mathsInput.getSecondNumber()))
+                        .setFirstNumber(Integer.parseInt(mathsInput.getFirstNumber()))
+                        .setSecondNumber(Integer.parseInt(mathsInput.getSecondNumber()))
                         .setSign(mathsInput.getMathsSign())
                 .build()).getResult();
     }
